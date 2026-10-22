@@ -29,15 +29,6 @@ Nine constraints that force small, behaviour-rich objects. They are an exercise,
 8. **No more than two instance variables per class.** Injected dependencies count. Three+ means split the class or group related fields into a value object.
 9. **No getters/setters/properties exposing state.** Tell, don't ask: move the logic that reads state into the owning object. Exempt: data carriers (see step 2).
 
-## Repo conventions to preserve (ttd.adserving)
-
-- Always braces on control flow, even single-line.
-- Concrete types for private/internal members (CA1859); `List<T>` not `ToIReadOnlyCollection()`.
-- `private const` / `public static readonly`, not `public const`.
-- Prefer `list[0]` over `.First()` on indexables.
-- Comments only for "why". Don't add narrating comments while refactoring.
-- Tests: `private readonly` fields, xUnit asserts.
-
 ## Judgement calls
 
 - Rules 3, 8, 9 conflict most with EF/DI-heavy code. Flag, don't force.
